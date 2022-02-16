@@ -1,5 +1,4 @@
 <html>
-<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -77,12 +76,6 @@ const conservation = { //Harold Town Conservation Area
     }
  };
 
- const pointGraphic = new Graphic({
-    geometry: point,
-    symbol: simpleMarkerSymbol
- });
- graphicsLayer.add(pointGraphic);
-
 
  const popupTemplate = {
     title: "{Name}",
@@ -92,10 +85,14 @@ const conservation = { //Harold Town Conservation Area
     Name: "Graphic",
     Description: "Potential Date Location"
  }
+  const pointGraphic = new Graphic({
+    geometry: point,
+    symbol: simpleMarkerSymbol,
+    
     attributes: attributes,
     popupTemplate: popupTemplate
  });
-
+ graphicsLayer.add(pointGraphic);
  });
 </script>
 </head>
