@@ -28,16 +28,15 @@
 
     esriConfig.apiKey = "AAPK5cb78c5de54142c1a03ce642b37a8373G0GDR_3y0Pdod6FByKY2-6BrmNxRfYl9EMtPj2H9wQWygYPLyVm03tFiPP7MGFsm";
 
-    const map = new Map({
+ const map = new Map({
       basemap: "arcgis-dark-gray" //Basemap layer- Dark Crey Canvas
     });
 
-    const view = new MapView({
+ const view = new MapView({
       container: "viewDiv",
       map: map,
       center: [-78.322717,44.296962], //Longitude, latitude
       zoom: 12
-    container: "viewDiv"
  });
 
  const graphicsLayer = new GraphicsLayer();
