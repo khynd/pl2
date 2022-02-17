@@ -1,3 +1,9 @@
+<!--- --->
+
+<!--- This was originally a point-based map (and makes more sense that way) but I couldn't get it to work
+      and almost melted my brain trying to figure it out. Thus, it has become a line feature for the 
+      preservation of the state of matter in which my brain is in. --->
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -41,39 +47,21 @@
  const graphicsLayer = new GraphicsLayer();
  map.add(graphicsLayer);
 
-const park = { //Mark S Burnham Prov Park
-    type: "point",
-    longitude: -78.270076,
-    latitude: 44.297559
- };
-const museum = { //Ptbo Museum and Archives
-    type: "point",
-    longitude: -78.303073,
-    latitude: 44.309364
- };
-const conservation = { //Harold Town Conservation Area
-    type: "point",
-    longitude: -78.261176,
-    latitude: 44.322102
- };
- const swamp = { //Cavan Swamp Wildlife Area
-    type: "point",
-    longitude: -78.476901,
-    latitude: 44.255683
- };
- const creek = { //Miller Creek Wildlife Area
-    type: "point",
-    longitude: -78.351238,
-    latitude: 44.389128
- };
+const polyline = { 
+    type: "polyline",
+  paths: [
+    [-78.270076, 44.297559] //Mark S Burnham Prov Park
+    [-78.303073, 44.309364] //Ptbo Museum and Archives
+    [-78.261176, 44.322102] //Harold Town Conservation Area
+    [-78.476901, 44.255683] //Cavan Swamp Wildlife Area
+    [-78.351238, 44.389128] //Miller Creek Wildlife Area
+    ]
    
- const simpleMarkerSymbol = {
-    type: "simple-marker",
+   
+ const simpleLineSymbol = {
+    type: "simple-line",
     color: [243, 164, 227],  // Light Pink
-    outline: {
-        color: [255, 255, 255], // White
-        width: 1
-    }
+    width: 2
  };
 
 
@@ -85,15 +73,16 @@ const conservation = { //Harold Town Conservation Area
     Name: "Graphic",
     Description: "Potential Date Location"
  }
-  const pointGraphic = new Graphic({
-    geometry: point,
-    symbol: simpleMarkerSymbol,
+  const polylineGraphic = new Graphic({
+    geometry: polyline,
+    symbol: simpleLineSymbol,
     
     attributes: attributes,
     popupTemplate: popupTemplate
  });
- graphicsLayer.add(pointGraphic);
+ graphicsLayer.add(polylineGraphic);
  });
+    
 </script>
 </head>
 <body>
