@@ -1,4 +1,8 @@
-<!--- --->
+<!--- Created By: Kacy Hyndman 
+      Last updated: Feb 16, 2022
+      GEOM99 Practical Lab 2 
+      Adapted from: https://developers.arcgis.com/javascript/latest/add-a-point-line-and-polygon/ 
+                    https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-LineSymbolMarker.html --->
 
 <!--- This was originally a point-based map (and makes more sense that way) but I couldn't get it to work
       and almost melted my brain trying to figure it out. Thus, it has become a line feature for the 
@@ -8,7 +12,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>ArcGIS API for JavaScript Tutorials: Add a point, line, and polygon</title>
+  <title>Potential Data Locations in Peterborough, ON</title>
   <style>
     html, body, #viewDiv {
       padding: 0;
@@ -34,14 +38,14 @@
     esriConfig.apiKey = "AAPK5cb78c5de54142c1a03ce642b37a8373G0GDR_3y0Pdod6FByKY2-6BrmNxRfYl9EMtPj2H9wQWygYPLyVm03tFiPP7MGFsm";
 
  const map = new Map({
-      basemap: "arcgis-dark-gray" //Basemap layer- Dark Crey Canvas
+      basemap: "arcgis-dark-gray" //Basemap layer- Dark Grey Canvas
     });
 
  const view = new MapView({
       container: "viewDiv",
       map: map,
-      center: [-78.322717,44.296962], //Longitude, latitude
-      zoom: 12
+      center: [-78.315501,44.317159], //Longitude, latitude
+      zoom: 11
  });
 
  const graphicsLayer = new GraphicsLayer();
@@ -64,7 +68,7 @@ const polyline = {
     width: 2,
     marker: { 
       style: "diamond",
-      color: "blue",
+      color: "white",
       placement: "begin-end"
     }
  };
@@ -75,8 +79,8 @@ const polyline = {
     content: "{Description}"
  }
  const attributes = {
-    Name: "Graphic",
-    Description: "Potential Date Location"
+    Name: "Line",
+    Description: "Potential Valentine's Day date locations in Peterborough, Ontario"
  }
   const polylineGraphic = new Graphic({
     geometry: polyline,
